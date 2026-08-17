@@ -1,0 +1,2018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vovisti Consultancy - Official Website & Proposal Blueprint</title>
+    <meta name="description" content="Official website proposal and digital platform prototype for Vovisti Consultancy. Dual-domain architecture for Study Abroad and Global Travel & Visa Services.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-dark: #060913;
+            --bg-card: rgba(15, 23, 42, 0.65);
+            --bg-glass: rgba(255, 255, 255, 0.04);
+            --bg-glass-hover: rgba(255, 255, 255, 0.08);
+            --border-glass: rgba(255, 255, 255, 0.1);
+            --border-glow: rgba(16, 185, 129, 0.3);
+            
+            --navy-deep: #0b132b;
+            --navy-card: #0f172a;
+            --emerald: #10b981;
+            --emerald-glow: rgba(16, 185, 129, 0.35);
+            --emerald-dark: #059669;
+            --gold: #f59e0b;
+            --gold-glow: rgba(245, 158, 11, 0.3);
+            --blue-accent: #3b82f6;
+            
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --text-sub: #cbd5e1;
+            
+            --font-heading: 'Outfit', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+            --radius-lg: 20px;
+            --radius-md: 14px;
+            --radius-sm: 8px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(16, 185, 129, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 85% 35%, rgba(59, 130, 246, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 50% 75%, rgba(245, 158, 11, 0.08) 0%, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #ffffff;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #ffffff 0%, #38bdf8 50%, var(--emerald) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-gold {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Glassmorphic Components */
+        .glass-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            transition: var(--transition);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(16, 185, 129, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 20px var(--emerald-glow);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: var(--radius-md);
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--emerald) 0%, var(--emerald-dark) 100%);
+            color: #ffffff;
+            box-shadow: 0 4px 20px var(--emerald-glow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(16, 185, 129, 0.5);
+            background: linear-gradient(135deg, #34d399 0%, var(--emerald) 100%);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.08);
+            color: #ffffff;
+            border: 1px solid var(--border-glass);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #fbbf24 0%, var(--gold) 100%);
+            color: #0f172a;
+            box-shadow: 0 4px 20px var(--gold-glow);
+        }
+
+        .btn-gold:hover {
+            background: linear-gradient(135deg, #fef08a 0%, #fbbf24 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.5);
+        }
+
+        /* Top Announcement Bar */
+        .top-banner {
+            background: linear-gradient(90deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            border-bottom: 1px solid var(--border-glass);
+            padding: 10px 0;
+            font-size: 0.875rem;
+            color: var(--text-sub);
+        }
+
+        .top-banner-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .badge-live {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--emerald);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            border: 1px solid var(--emerald);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--emerald);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--emerald);
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        /* Header Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(6, 9, 19, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-glass);
+            padding: 16px 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #0b132b 0%, var(--emerald-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 1.25rem;
+            border: 1px solid var(--emerald);
+            box-shadow: 0 0 15px var(--emerald-glow);
+        }
+
+        .logo-text {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: -0.03em;
+        }
+
+        .logo-text span {
+            color: var(--emerald);
+        }
+
+        /* Dual Domain Switcher Control */
+        .domain-switcher-pill {
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid var(--border-glass);
+            border-radius: 30px;
+            padding: 4px;
+            display: flex;
+            gap: 4px;
+            box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        .switch-btn {
+            padding: 8px 18px;
+            border-radius: 24px;
+            font-family: var(--font-heading);
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .switch-btn.active {
+            background: linear-gradient(135deg, var(--navy-card) 0%, rgba(30, 41, 59, 0.9) 100%);
+            color: #ffffff;
+            border: 1px solid var(--border-glass);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .switch-btn.study-active.active {
+            border-color: var(--blue-accent);
+            color: #60a5fa;
+        }
+
+        .switch-btn.travel-active.active {
+            border-color: var(--emerald);
+            color: #34d399;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--text-sub);
+            text-decoration: none;
+            font-size: 0.938rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--emerald);
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            color: #ffffff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            border-radius: 30px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: var(--emerald);
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            line-height: 1.15;
+            margin-bottom: 24px;
+        }
+
+        .hero-desc {
+            font-size: 1.125rem;
+            color: var(--text-sub);
+            margin-bottom: 36px;
+            max-width: 600px;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+
+        .quick-stats-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 24px;
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-md);
+        }
+
+        .stat-item h3 {
+            font-size: 1.75rem;
+            color: var(--emerald);
+            margin-bottom: 4px;
+        }
+
+        .stat-item p {
+            font-size: 0.813rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+
+        /* Hero Live Interactive Card */
+        .hero-visual-card {
+            position: relative;
+            background: linear-gradient(145deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.7) 100%);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+        }
+
+        .visual-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-glass);
+        }
+
+        .visual-dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .visual-dots span {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .visual-dots span:nth-child(1) { background: #ef4444; }
+        .visual-dots span:nth-child(2) { background: #f59e0b; }
+        .visual-dots span:nth-child(3) { background: #10b981; }
+
+        .active-hub-display {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .preview-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .preview-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-md);
+            transition: var(--transition);
+        }
+
+        .preview-item:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+
+        .preview-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--emerald);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+
+        .preview-info h4 {
+            font-size: 0.95rem;
+            margin-bottom: 2px;
+        }
+
+        .preview-info p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Section Titles */
+        .section-header {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 56px;
+        }
+
+        .section-tag {
+            color: var(--emerald);
+            font-family: var(--font-heading);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.875rem;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .section-desc {
+            color: var(--text-sub);
+            font-size: 1.063rem;
+        }
+
+        /* Dual Architecture Showcase */
+        .architecture-section {
+            padding: 90px 0;
+            position: relative;
+        }
+
+        .arch-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+
+        .arch-card {
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0.8) 0%, rgba(11, 19, 43, 0.9) 100%);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .arch-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+        }
+
+        .arch-card.study-card::before {
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
+        }
+
+        .arch-card.travel-card::before {
+            background: linear-gradient(90deg, var(--emerald), #34d399);
+        }
+
+        .arch-head {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .arch-icon-box {
+            width: 54px;
+            height: 54px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .study-card .arch-icon-box {
+            background: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .travel-card .arch-icon-box {
+            background: rgba(16, 185, 129, 0.15);
+            color: #34d399;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .arch-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-top: 24px;
+        }
+
+        .arch-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: var(--text-sub);
+            font-size: 0.95rem;
+        }
+
+        .arch-features i {
+            color: var(--emerald);
+            margin-top: 4px;
+        }
+
+        /* Interactive Destination Explorer */
+        .destinations-section {
+            padding: 90px 0;
+            background: rgba(15, 23, 42, 0.3);
+            border-top: 1px solid var(--border-glass);
+            border-bottom: 1px solid var(--border-glass);
+        }
+
+        .filter-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 10px 24px;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-glass);
+            color: var(--text-muted);
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--emerald);
+            color: #ffffff;
+            border-color: var(--emerald);
+            box-shadow: 0 4px 15px var(--emerald-glow);
+        }
+
+        .destination-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 28px;
+        }
+
+        .dest-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .dest-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--emerald);
+            box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.8), 0 0 20px var(--emerald-glow);
+        }
+
+        .dest-image-box {
+            height: 180px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dest-image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .dest-card:hover .dest-image-box img {
+            transform: scale(1.08);
+        }
+
+        .dest-type-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(6, 9, 19, 0.85);
+            backdrop-filter: blur(8px);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--emerald);
+            border: 1px solid var(--emerald);
+        }
+
+        .dest-content {
+            padding: 24px;
+        }
+
+        .dest-title {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .dest-details {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            margin-bottom: 20px;
+        }
+
+        .dest-detail-row {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+            padding-bottom: 4px;
+        }
+
+        .dest-detail-row span:last-child {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        /* Test Prep Section */
+        .test-prep-section {
+            padding: 90px 0;
+        }
+
+        .prep-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .prep-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-lg);
+            padding: 28px 24px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .prep-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px var(--gold-glow);
+        }
+
+        .prep-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 20px;
+            border: 1px solid var(--gold);
+        }
+
+        .score-target {
+            display: inline-block;
+            background: rgba(245, 158, 11, 0.2);
+            color: #fef08a;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            margin-bottom: 16px;
+        }
+
+        /* Automated Booking Calendar Section */
+        .booking-section {
+            padding: 90px 0;
+            background: radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.9) 0%, rgba(6, 9, 19, 0.95) 100%);
+        }
+
+        .booking-card-wrapper {
+            max-width: 960px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.8);
+        }
+
+        .booking-steps {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 36px;
+        }
+
+        .calendar-picker {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-md);
+            padding: 20px;
+        }
+
+        .cal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .cal-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 6px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        .cal-day-label {
+            color: var(--text-muted);
+            font-weight: 600;
+            padding-bottom: 8px;
+        }
+
+        .cal-date {
+            padding: 10px 4px;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: var(--transition);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .cal-date:hover:not(.disabled) {
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--emerald);
+        }
+
+        .cal-date.active {
+            background: var(--emerald);
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .cal-date.disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .time-slots {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .slot-btn {
+            padding: 10px;
+            border-radius: var(--radius-sm);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-glass);
+            color: var(--text-sub);
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .slot-btn:hover, .slot-btn.selected {
+            background: var(--emerald);
+            color: #ffffff;
+            border-color: var(--emerald);
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--text-sub);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: var(--radius-sm);
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-glass);
+            color: #ffffff;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--emerald);
+            box-shadow: 0 0 10px var(--emerald-glow);
+        }
+
+        /* Roadmap Section */
+        .roadmap-section {
+            padding: 90px 0;
+        }
+
+        .gantt-container {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-lg);
+            padding: 36px;
+        }
+
+        .phase-item {
+            margin-bottom: 28px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border-glass);
+        }
+
+        .phase-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .phase-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .phase-title {
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .phase-tag {
+            font-size: 0.8rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+            background: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .progress-bar-bg {
+            height: 10px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--emerald) 0%, #34d399 100%);
+            border-radius: 5px;
+            transition: width 1s ease-in-out;
+        }
+
+        /* Client Checklist */
+        .checklist-section {
+            padding: 90px 0;
+            background: rgba(15, 23, 42, 0.4);
+            border-top: 1px solid var(--border-glass);
+        }
+
+        .checklist-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-lg);
+            padding: 36px;
+        }
+
+        .checklist-items {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .check-item:hover {
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .check-box {
+            width: 24px;
+            height: 24px;
+            border-radius: 6px;
+            border: 2px solid var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .check-item.checked .check-box {
+            background: var(--emerald);
+            border-color: var(--emerald);
+            color: #ffffff;
+        }
+
+        .check-item.checked span {
+            text-decoration: line-through;
+            color: var(--text-muted);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 90px 0;
+        }
+
+        .faq-accordion {
+            max-width: 840px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        .faq-answer {
+            padding: 0 24px 20px;
+            color: var(--text-sub);
+            font-size: 0.95rem;
+            display: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 16px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+            color: var(--emerald);
+        }
+
+        /* Floating WhatsApp Chat */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            z-index: 999;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.6);
+        }
+
+        /* Modal Popup */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            padding: 20px;
+        }
+
+        .modal-box {
+            background: var(--navy-card);
+            border: 1px solid var(--emerald);
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            max-width: 480px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.9), 0 0 30px var(--emerald-glow);
+        }
+
+        .modal-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--emerald);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 20px;
+            border: 2px solid var(--emerald);
+        }
+
+        /* Footer */
+        footer {
+            background: #04060d;
+            border-top: 1px solid var(--border-glass);
+            padding: 60px 0 30px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 48px;
+        }
+
+        .footer-logo {
+            margin-bottom: 16px;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--emerald);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 24px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 1024px) {
+            .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+            .arch-grid { grid-template-columns: 1fr; }
+            .prep-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.4rem; }
+            .quick-stats-bar { grid-template-columns: repeat(2, 1fr); }
+            .booking-steps { grid-template-columns: 1fr; }
+            .nav-menu { display: none; }
+            .mobile-toggle { display: block; }
+            .top-banner-flex { justify-content: center; text-align: center; }
+            .prep-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Announcement Bar -->
+    <div class="top-banner">
+        <div class="container top-banner-flex">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span class="badge-live"><span class="pulse-dot"></span> PROPOSAL SPECIFICATION V1.0</span>
+                <span>Client: <strong>Vovisti Consultancy</strong></span>
+            </div>
+            <div>
+                <i class="fa-solid fa-clock-rotate-left"></i> Estimated Launch: <strong>4 Weeks</strong> | <i class="fa-solid fa-shield-halved"></i> 99.2% Visa Success Rate
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="brand-logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-earth-americas"></i>
+                </div>
+                <div class="logo-text">VOVISTI <span>CONSULTANCY</span></div>
+            </a>
+
+            <!-- Dual Domain Switcher -->
+            <div class="domain-switcher-pill">
+                <button class="switch-btn study-active active" id="btn-study-mode" onclick="toggleDomainMode('study')">
+                    <i class="fa-solid fa-graduation-cap"></i> 🎓 Study Hub
+                </button>
+                <button class="switch-btn travel-active" id="btn-travel-mode" onclick="toggleDomainMode('travel')">
+                    <i class="fa-solid fa-plane-departure"></i> ✈️ Travel Hub
+                </button>
+            </div>
+
+            <!-- Navigation Links -->
+            <ul class="nav-menu">
+                <li><a href="#overview" class="nav-link">Overview</a></li>
+                <li><a href="#architecture" class="nav-link">Architecture</a></li>
+                <li><a href="#destinations" class="nav-link">Destinations</a></li>
+                <li><a href="#testprep" class="nav-link">Test Prep</a></li>
+                <li><a href="#booking" class="nav-link">Book Consultation</a></li>
+                <li><a href="#roadmap" class="nav-link">Roadmap</a></li>
+            </ul>
+
+            <a href="#booking" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.875rem;">
+                <i class="fa-solid fa-calendar-check"></i> Book Consultation
+            </a>
+
+            <button class="mobile-toggle" onclick="alert('Mobile menu toggled!')">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="overview">
+        <div class="container">
+            <div class="hero-grid">
+                <div>
+                    <div class="hero-badge" id="hero-hub-badge">
+                        <i class="fa-solid fa-sparkles"></i> DUAL-DOMAIN PLATFORM SHOWCASE
+                    </div>
+                    
+                    <h1 class="hero-title" id="hero-main-title">
+                        Your Gateway to <span class="gradient-text">Top Global Universities</span> & Student Visas
+                    </h1>
+                    
+                    <p class="hero-desc" id="hero-main-desc">
+                        Vovisti provides an effortless digital experience connecting ambitious students to top-ranked international universities in the UK, USA, Canada, Australia, and Europe.
+                    </p>
+
+                    <div class="hero-cta-group">
+                        <a href="#destinations" class="btn btn-primary" id="primary-cta-btn">
+                            <i class="fa-solid fa-compass"></i> Explore Study Programs
+                        </a>
+                        <a href="#booking" class="btn btn-secondary">
+                            <i class="fa-solid fa-calendar-days"></i> Schedule 1-on-1 Consultation
+                        </a>
+                    </div>
+
+                    <!-- Quick Stats Bar -->
+                    <div class="quick-stats-bar">
+                        <div class="stat-item">
+                            <h3>15,000+</h3>
+                            <p>Visas Approved</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>500+</h3>
+                            <p>Universities</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>45+</h3>
+                            <p>Countries</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 style="color: var(--gold);">99.2%</h3>
+                            <p>Success Rate</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Interactive Visual Card -->
+                <div class="hero-visual-card">
+                    <div class="visual-header">
+                        <div class="visual-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div class="active-hub-display" id="visual-active-tag">
+                            <i class="fa-solid fa-graduation-cap" style="color: var(--blue-accent);"></i> ACTIVE: STUDY ABROAD HUB
+                        </div>
+                    </div>
+
+                    <h3 style="font-size: 1.1rem; margin-bottom: 16px; color: var(--text-sub);">
+                        Live Feature Highlights & Automation
+                    </h3>
+
+                    <ul class="preview-list" id="preview-features-list">
+                        <li class="preview-item">
+                            <div class="preview-icon"><i class="fa-solid fa-university"></i></div>
+                            <div class="preview-info">
+                                <h4>University & Course Matcher</h4>
+                                <p>Instant eligibility checks for UK, USA & Canadian intakes.</p>
+                            </div>
+                        </li>
+                        <li class="preview-item">
+                            <div class="preview-icon" style="background: rgba(245, 158, 11, 0.15); color: var(--gold);"><i class="fa-solid fa-file-signature"></i></div>
+                            <div class="preview-info">
+                                <h4>SOP & Scholarship Assistance</h4>
+                                <p>Step-by-step guidance on securing up to 50% tuition grants.</p>
+                            </div>
+                        </li>
+                        <li class="preview-item">
+                            <div class="preview-icon" style="background: rgba(59, 130, 246, 0.15); color: var(--blue-accent);"><i class="fa-solid fa-passport"></i></div>
+                            <div class="preview-info">
+                                <h4>Student Visa Processing</h4>
+                                <p>End-to-end document verification and embassy mock interviews.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section class="architecture-section" id="architecture">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">DUAL-DOMAIN ARCHITECTURE</span>
+                <h2 class="section-title">Zero Friction. Dedicated Focus.</h2>
+                <p class="section-desc">
+                    To eliminate confusion between students seeking education and clients seeking tourist/work visas, Vovisti features a seamless one-click domain switcher.
+                </p>
+            </div>
+
+            <div class="arch-grid">
+                <!-- Study Hub Card -->
+                <div class="arch-card study-card">
+                    <div class="arch-head">
+                        <div class="arch-icon-box">
+                            <i class="fa-solid fa-user-graduate"></i>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 1.5rem;">🎓 Study Abroad Hub</h3>
+                            <p style="color: var(--text-muted); font-size: 0.875rem;">Tailored for Students & Academic Applicants</p>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-sub); font-size: 0.95rem;">
+                        Dedicated portal designed to convert prospective students into university enrollments with complete clarity.
+                    </p>
+                    <ul class="arch-features">
+                        <li><i class="fa-solid fa-circle-check"></i> University Selection & Course Search</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Direct Application & Admission Tracking</li>
+                        <li><i class="fa-solid fa-circle-check"></i> IELTS / PTE / TOEFL / SAT Prep Batches</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Student Visa Filing & Financial Guidance</li>
+                    </ul>
+                </div>
+
+                <!-- Travel Hub Card -->
+                <div class="arch-card travel-card">
+                    <div class="arch-head">
+                        <div class="arch-icon-box">
+                            <i class="fa-solid fa-plane-up"></i>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 1.5rem;">✈️ Travel & Visa Hub</h3>
+                            <p style="color: var(--text-muted); font-size: 0.875rem;">Tailored for Tourists, Business & Work Travelers</p>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-sub); font-size: 0.95rem;">
+                        High-converting booking engine for visa assistance, flight reservations, and global travel support.
+                    </p>
+                    <ul class="arch-features">
+                        <li><i class="fa-solid fa-circle-check"></i> Schengen, USA, UK Tourist & Visit Visas</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Business & Work Permit Consultation</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Flight Itinerary & Hotel Booking Proof</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Comprehensive Overseas Travel Insurance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations Explorer Section -->
+    <section class="destinations-section" id="destinations">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">GLOBAL DESTINATIONS</span>
+                <h2 class="section-title">Interactive Destination Explorer</h2>
+                <p class="section-desc">
+                    Explore top study destinations and visa pathways with real-time processing data and intake requirements.
+                </p>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="filter-tabs">
+                <button class="filter-btn active" onclick="filterDestinations('all')">All Regions</button>
+                <button class="filter-btn" onclick="filterDestinations('study')">🎓 Study Abroad</button>
+                <button class="filter-btn" onclick="filterDestinations('travel')">✈️ Tourist & Travel</button>
+            </div>
+
+            <!-- Destination Cards Grid -->
+            <div class="destination-grid" id="dest-grid">
+                
+                <!-- UK Card -->
+                <div class="dest-card" data-category="study">
+                    <div class="dest-image-box">
+                        <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=600&q=80" alt="United Kingdom Big Ben">
+                        <span class="dest-type-badge">🎓 STUDY & VISA</span>
+                    </div>
+                    <div class="dest-content">
+                        <div class="dest-title">
+                            <h3>United Kingdom</h3>
+                            <i class="fa-solid fa-arrow-right-long" style="color: var(--emerald);"></i>
+                        </div>
+                        <div class="dest-details">
+                            <div class="dest-detail-row"><span>Intakes:</span> <span>Sept & Jan</span></div>
+                            <div class="dest-detail-row"><span>Processing:</span> <span>15 - 21 Days</span></div>
+                            <div class="dest-detail-row"><span>PSW Work Permit:</span> <span>2 Years</span></div>
+                        </div>
+                        <button class="btn btn-secondary" style="width: 100%; font-size: 0.85rem;" onclick="openBookingModal('United Kingdom')">
+                            Apply for UK
+                        </button>
+                    </div>
+                </div>
+
+                <!-- USA Card -->
+                <div class="dest-card" data-category="study">
+                    <div class="dest-image-box">
+                        <img src="https://images.unsplash.com/photo-1485738422979-f5c462d49f74?auto=format&fit=crop&w=600&q=80" alt="USA Statue of Liberty">
+                        <span class="dest-type-badge">🎓 STUDY & VISA</span>
+                    </div>
+                    <div class="dest-content">
+                        <div class="dest-title">
+                            <h3>United States</h3>
+                            <i class="fa-solid fa-arrow-right-long" style="color: var(--emerald);"></i>
+                        </div>
+                        <div class="dest-details">
+                            <div class="dest-detail-row"><span>Intakes:</span> <span>Fall & Spring</span></div>
+                            <div class="dest-detail-row"><span>Processing:</span> <span>30 - 45 Days</span></div>
+                            <div class="dest-detail-row"><span>STEM OPT:</span> <span>Up to 3 Years</span></div>
+                        </div>
+                        <button class="btn btn-secondary" style="width: 100%; font-size: 0.85rem;" onclick="openBookingModal('United States')">
+                            Apply for USA
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Europe Schengen Card -->
+                <div class="dest-card" data-category="travel">
+                    <div class="dest-image-box">
+                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&q=80" alt="Schengen Europe Eiffel Tower">
+                        <span class="dest-type-badge" style="color: var(--gold); border-color: var(--gold);">✈️ TOURIST VISA</span>
+                    </div>
+                    <div class="dest-content">
+                        <div class="dest-title">
+                            <h3>Schengen Europe</h3>
+                            <i class="fa-solid fa-arrow-right-long" style="color: var(--emerald);"></i>
+                        </div>
+                        <div class="dest-details">
+                            <div class="dest-detail-row"><span>Countries:</span> <span>29 Countries</span></div>
+                            <div class="dest-detail-row"><span>Processing:</span> <span>10 - 15 Days</span></div>
+                            <div class="dest-detail-row"><span>Validity:</span> <span>Up to 5 Years</span></div>
+                        </div>
+                        <button class="btn btn-secondary" style="width: 100%; font-size: 0.85rem;" onclick="openBookingModal('Schengen Europe')">
+                            Apply for Schengen
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dubai Card -->
+                <div class="dest-card" data-category="travel">
+                    <div class="dest-image-box">
+                        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80" alt="Dubai Skyline">
+                        <span class="dest-type-badge" style="color: var(--gold); border-color: var(--gold);">✈️ EXPRESS VISA</span>
+                    </div>
+                    <div class="dest-content">
+                        <div class="dest-title">
+                            <h3>Dubai (UAE)</h3>
+                            <i class="fa-solid fa-arrow-right-long" style="color: var(--emerald);"></i>
+                        </div>
+                        <div class="dest-details">
+                            <div class="dest-detail-row"><span>Processing:</span> <span>24 - 48 Hours</span></div>
+                            <div class="dest-detail-row"><span>Visa Type:</span> <span>30 / 60 Days</span></div>
+                            <div class="dest-detail-row"><span>Approval Rate:</span> <span>99.8%</span></div>
+                        </div>
+                        <button class="btn btn-secondary" style="width: 100%; font-size: 0.85rem;" onclick="openBookingModal('Dubai UAE')">
+                            Apply for Dubai
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Test Prep Section -->
+    <section class="test-prep-section" id="testprep">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">TEST PREPARATION ACADEMY</span>
+                <h2 class="section-title">Score High. Secure Your Admission.</h2>
+                <p class="section-desc">
+                    Comprehensive training modules with certified master trainers and simulated mock tests.
+                </p>
+            </div>
+
+            <div class="prep-grid">
+                <div class="prep-card">
+                    <div class="prep-icon"><i class="fa-solid fa-book-open"></i></div>
+                    <h3>IELTS Academic</h3>
+                    <span class="score-target">Target: 7.5+ Band</span>
+                    <p style="font-size: 0.85rem; color: var(--text-sub); margin-bottom: 16px;">
+                        Interactive speaking practice, writing correction, and weekly mock exams.
+                    </p>
+                    <button class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.8rem;" onclick="openBookingModal('IELTS Coaching')">
+                        Book Diagnostic Test
+                    </button>
+                </div>
+
+                <div class="prep-card">
+                    <div class="prep-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                    <h3>PTE Academic</h3>
+                    <span class="score-target">Target: 79+ Score</span>
+                    <p style="font-size: 0.85rem; color: var(--text-sub); margin-bottom: 16px;">
+                        Computer-based AI scoring practice and templates for fast results.
+                    </p>
+                    <button class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.8rem;" onclick="openBookingModal('PTE Coaching')">
+                        Book Diagnostic Test
+                    </button>
+                </div>
+
+                <div class="prep-card">
+                    <div class="prep-icon"><i class="fa-solid fa-headset"></i></div>
+                    <h3>TOEFL iBT</h3>
+                    <span class="score-target">Target: 100+ Score</span>
+                    <p style="font-size: 0.85rem; color: var(--text-sub); margin-bottom: 16px;">
+                        Intensive reading, listening, and accent accentuation strategies.
+                    </p>
+                    <button class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.8rem;" onclick="openBookingModal('TOEFL Coaching')">
+                        Book Diagnostic Test
+                    </button>
+                </div>
+
+                <div class="prep-card">
+                    <div class="prep-icon"><i class="fa-solid fa-calculator"></i></div>
+                    <h3>SAT / GRE Prep</h3>
+                    <span class="score-target">Target: Top 5% Percentile</span>
+                    <p style="font-size: 0.85rem; color: var(--text-sub); margin-bottom: 16px;">
+                        Quant & Verbal mastery for US scholarship eligibility.
+                    </p>
+                    <button class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.8rem;" onclick="openBookingModal('SAT GRE Prep')">
+                        Book Diagnostic Test
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Automated Calendar Sync Booking Portal -->
+    <section class="booking-section" id="booking">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">AUTOMATED CALENDAR SYNC</span>
+                <h2 class="section-title">Instant Consultation Booking</h2>
+                <p class="section-desc">
+                    Pick an open date and live time slot synced directly with Vovisti's counseling calendar.
+                </p>
+            </div>
+
+            <div class="booking-card-wrapper">
+                <div class="booking-steps">
+                    
+                    <!-- Left: Interactive Calendar -->
+                    <div>
+                        <h3 style="font-size: 1.25rem; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+                            <i class="fa-solid fa-calendar-day" style="color: var(--emerald);"></i> Select Date & Time Slot
+                        </h3>
+                        
+                        <div class="calendar-picker">
+                            <div class="cal-header">
+                                <button style="background: none; border: none; color: #fff; cursor: pointer;"><i class="fa-solid fa-chevron-left"></i></button>
+                                <span>August 2026</span>
+                                <button style="background: none; border: none; color: #fff; cursor: pointer;"><i class="fa-solid fa-chevron-right"></i></button>
+                            </div>
+                            <div class="cal-grid">
+                                <div class="cal-day-label">Mo</div>
+                                <div class="cal-day-label">Tu</div>
+                                <div class="cal-day-label">We</div>
+                                <div class="cal-day-label">Th</div>
+                                <div class="cal-day-label">Fr</div>
+                                <div class="cal-day-label">Sa</div>
+                                <div class="cal-day-label">Su</div>
+                                
+                                <div class="cal-date disabled">17</div>
+                                <div class="cal-date active" onclick="selectCalDate(this, 'Aug 18')">18</div>
+                                <div class="cal-date" onclick="selectCalDate(this, 'Aug 19')">19</div>
+                                <div class="cal-date" onclick="selectCalDate(this, 'Aug 20')">20</div>
+                                <div class="cal-date" onclick="selectCalDate(this, 'Aug 21')">21</div>
+                                <div class="cal-date" onclick="selectCalDate(this, 'Aug 22')">22</div>
+                                <div class="cal-date disabled">23</div>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 16px;">
+                            <label style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Available Time Slots:</label>
+                            <div class="time-slots">
+                                <button class="slot-btn selected" onclick="selectSlot(this)">10:00 AM - 10:30 AM</button>
+                                <button class="slot-btn" onclick="selectSlot(this)">02:00 PM - 02:30 PM</button>
+                                <button class="slot-btn" onclick="selectSlot(this)">04:30 PM - 05:00 PM</button>
+                                <button class="slot-btn" onclick="selectSlot(this)">06:00 PM - 06:30 PM</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Quick Booking Details Form -->
+                    <div>
+                        <h3 style="font-size: 1.25rem; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+                            <i class="fa-solid fa-user-check" style="color: var(--emerald);"></i> Client Details
+                        </h3>
+
+                        <form id="consultation-form" onsubmit="handleBookingSubmit(event)">
+                            <div class="form-group">
+                                <label>Selected Service</label>
+                                <select class="form-control" id="form-service-select">
+                                    <option value="Study Abroad Counseling">🎓 Study Abroad University Application</option>
+                                    <option value="Tourist & Visit Visa">✈️ Tourist / Business Visa Assistance</option>
+                                    <option value="IELTS / PTE Test Prep">📚 IELTS / PTE Coaching Batch</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Full Name</label>
+                                <input type="text" class="form-control" placeholder="e.g. Alexander Vance" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Phone / WhatsApp Number</label>
+                                <input type="tel" class="form-control" placeholder="+1 (555) 000-0000" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Preferred Country of Interest</label>
+                                <input type="text" class="form-control" id="form-country-input" placeholder="e.g. United Kingdom / Europe" required>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
+                                <i class="fa-solid fa-circle-check"></i> Lock In Appointment
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Development Roadmap Section -->
+    <section class="roadmap-section" id="roadmap">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">PROJECT DEVELOPMENT BLUEPRINT</span>
+                <h2 class="section-title">4-Week Implementation Roadmap</h2>
+                <p class="section-desc">
+                    Clear project phases, milestones, and deliverable schedules for the Vovisti site build.
+                </p>
+            </div>
+
+            <div class="gantt-container">
+                
+                <!-- Phase 1 -->
+                <div class="phase-item">
+                    <div class="phase-header">
+                        <div class="phase-title">
+                            <i class="fa-solid fa-paint-brush" style="color: var(--gold);"></i>
+                            <strong>Phase 1: Planning & Visual Wireframing</strong>
+                        </div>
+                        <span class="phase-tag">Week 1 (Aug 15 - Aug 22)</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-fill" style="width: 100%;"></div>
+                    </div>
+                    <p style="font-size: 0.875rem; color: var(--text-sub);">
+                        Finalize brand guidelines, typography scale, responsive wireframes, and dual-domain architecture logic.
+                    </p>
+                </div>
+
+                <!-- Phase 2 -->
+                <div class="phase-item">
+                    <div class="phase-header">
+                        <div class="phase-title">
+                            <i class="fa-solid fa-code" style="color: var(--blue-accent);"></i>
+                            <strong>Phase 2: Core Build & System Integration</strong>
+                        </div>
+                        <span class="phase-tag" style="color: var(--emerald); border-color: var(--emerald);">Weeks 2–3 (In Progress)</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-fill" style="width: 65%;"></div>
+                    </div>
+                    <p style="font-size: 0.875rem; color: var(--text-sub);">
+                        Develop glassmorphic responsive layouts, dual-domain switcher engine, live calendar booking, and WhatsApp assistant.
+                    </p>
+                </div>
+
+                <!-- Phase 3 -->
+                <div class="phase-item">
+                    <div class="phase-header">
+                        <div class="phase-title">
+                            <i class="fa-solid fa-rocket" style="color: var(--emerald);"></i>
+                            <strong>Phase 3: QA Testing & Live Domain Launch</strong>
+                        </div>
+                        <span class="phase-tag">Week 4 (Sept 1 - Sept 7)</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-fill" style="width: 15%;"></div>
+                    </div>
+                    <p style="font-size: 0.875rem; color: var(--text-sub);">
+                        Mobile responsiveness audit, Core Web Vitals speed optimization, SSL security, and official server deployment.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Checklist Section -->
+    <section class="checklist-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">PROJECT KICKOFF HUB</span>
+                <h2 class="section-title">Client Onboarding Checklist</h2>
+                <p class="section-desc">
+                    Key assets and information requested from Vovisti to finalize integration.
+                </p>
+            </div>
+
+            <div class="checklist-card" style="max-width: 800px; margin: 0 auto;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <h3><i class="fa-solid fa-list-check" style="color: var(--emerald);"></i> Required Action Items</h3>
+                    <span style="font-size: 0.85rem; color: var(--emerald); font-weight: 700;" id="checklist-progress">2 of 5 Completed</span>
+                </div>
+
+                <div class="checklist-items">
+                    <div class="check-item checked" onclick="toggleCheck(this)">
+                        <div class="check-box"><i class="fa-solid fa-check"></i></div>
+                        <span>High-resolution Brand Logo (Vector / Transparent PNG format)</span>
+                    </div>
+                    <div class="check-item checked" onclick="toggleCheck(this)">
+                        <div class="check-box"><i class="fa-solid fa-check"></i></div>
+                        <span>Official Contact Phone Numbers, Email, & Office Location Address</span>
+                    </div>
+                    <div class="check-item" onclick="toggleCheck(this)">
+                        <div class="check-box"><i class="fa-solid fa-check"></i></div>
+                        <span>Google Calendar / Calendly account link for booking sync</span>
+                    </div>
+                    <div class="check-item" onclick="toggleCheck(this)">
+                        <div class="check-box"><i class="fa-solid fa-check"></i></div>
+                        <span>List of priority featured countries and university partners</span>
+                    </div>
+                    <div class="check-item" onclick="toggleCheck(this)">
+                        <div class="check-box"><i class="fa-solid fa-check"></i></div>
+                        <span>Client visa approval letters & student video testimonials</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">FREQUENTLY ASKED QUESTIONS</span>
+                <h2 class="section-title">Everything You Need To Know</h2>
+            </div>
+
+            <div class="faq-accordion">
+                <div class="faq-item active">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>How does the Dual-Domain Switcher work for website visitors?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        The switcher seamlessly toggles site content, navigation, and featured services between <strong>Study Abroad</strong> and <strong>Travel Visas</strong> with a single click, ensuring visitors immediately find relevant information without distraction.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Can clients book directly via Google Calendar or Calendly?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes! The platform integrates direct API calendar sync, letting clients view available counselor slots in real time and receive automated instant email and WhatsApp reminders.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Is the site fully optimized for mobile devices?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Absolutely. The website uses fluid glassmorphic breakpoints, fast-loading optimized media, and touch-friendly controls tested across iOS and Android viewports.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/18005558684" target="_blank" class="whatsapp-float" title="Instant WhatsApp Support">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Booking Confirmation Modal -->
+    <div class="modal-overlay" id="booking-modal">
+        <div class="modal-box">
+            <div class="modal-icon">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 10px;">Appointment Confirmed!</h3>
+            <p style="color: var(--text-sub); font-size: 0.95rem; margin-bottom: 20px;" id="modal-desc-text">
+                Your consultation slot has been reserved. A confirmation email and WhatsApp calendar invite have been dispatched.
+            </p>
+            <button class="btn btn-primary" style="width: 100%;" onclick="closeBookingModal()">
+                Close & Return to Proposal
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript Interactive Logic -->
+    <script>
+        // Domain Switcher Logic
+        function toggleDomainMode(mode) {
+            const studyBtn = document.getElementById('btn-study-mode');
+            const travelBtn = document.getElementById('btn-travel-mode');
+            
+            const heroBadge = document.getElementById('hero-hub-badge');
+            const heroTitle = document.getElementById('hero-main-title');
+            const heroDesc = document.getElementById('hero-main-desc');
+            const primaryCta = document.getElementById('primary-cta-btn');
+            const visualTag = document.getElementById('visual-active-tag');
+            const previewList = document.getElementById('preview-features-list');
+
+            if (mode === 'study') {
+                studyBtn.classList.add('active');
+                travelBtn.classList.remove('active');
+
+                heroBadge.innerHTML = '<i class="fa-solid fa-graduation-cap"></i> STUDY ABROAD HUB ACTIVE';
+                heroTitle.innerHTML = 'Your Gateway to <span class="gradient-text">Top Global Universities</span> & Student Visas';
+                heroDesc.innerText = 'Vovisti provides an effortless digital experience connecting ambitious students to top-ranked international universities in the UK, USA, Canada, Australia, and Europe.';
+                primaryCta.innerHTML = '<i class="fa-solid fa-compass"></i> Explore Study Programs';
+                primaryCta.href = '#destinations';
+
+                visualTag.innerHTML = '<i class="fa-solid fa-graduation-cap" style="color: var(--blue-accent);"></i> ACTIVE: STUDY ABROAD HUB';
+
+                previewList.innerHTML = `
+                    <li class="preview-item">
+                        <div class="preview-icon"><i class="fa-solid fa-university"></i></div>
+                        <div class="preview-info">
+                            <h4>University & Course Matcher</h4>
+                            <p>Instant eligibility checks for UK, USA & Canadian intakes.</p>
+                        </div>
+                    </li>
+                    <li class="preview-item">
+                        <div class="preview-icon" style="background: rgba(245, 158, 11, 0.15); color: var(--gold);"><i class="fa-solid fa-file-signature"></i></div>
+                        <div class="preview-info">
+                            <h4>SOP & Scholarship Assistance</h4>
+                            <p>Step-by-step guidance on securing up to 50% tuition grants.</p>
+                        </div>
+                    </li>
+                    <li class="preview-item">
+                        <div class="preview-icon" style="background: rgba(59, 130, 246, 0.15); color: var(--blue-accent);"><i class="fa-solid fa-passport"></i></div>
+                        <div class="preview-info">
+                            <h4>Student Visa Processing</h4>
+                            <p>End-to-end document verification and embassy mock interviews.</p>
+                        </div>
+                    </li>
+                `;
+            } else {
+                travelBtn.classList.add('active');
+                studyBtn.classList.remove('active');
+
+                heroBadge.innerHTML = '<i class="fa-solid fa-plane-departure"></i> TRAVEL & VISA HUB ACTIVE';
+                heroTitle.innerHTML = 'Seamless <span class="gradient-gold">Tourist, Business & Work Visas</span> Worldwide';
+                heroDesc.innerText = 'Fast-track your global travel plans with Vovisti’s 99.2% visa success rate for Schengen, Europe, UK, Dubai, and worldwide destinations.';
+                primaryCta.innerHTML = '<i class="fa-solid fa-plane"></i> Apply for Travel Visa';
+                primaryCta.href = '#destinations';
+
+                visualTag.innerHTML = '<i class="fa-solid fa-plane-up" style="color: var(--emerald);"></i> ACTIVE: TRAVEL & VISA HUB';
+
+                previewList.innerHTML = `
+                    <li class="preview-item">
+                        <div class="preview-icon" style="background: rgba(16, 185, 129, 0.15); color: var(--emerald);"><i class="fa-solid fa-passport"></i></div>
+                        <div class="preview-info">
+                            <h4>Schengen & UK Visit Visas</h4>
+                            <p>Fast application filing with 10-15 day turnaround time.</p>
+                        </div>
+                    </li>
+                    <li class="preview-item">
+                        <div class="preview-icon" style="background: rgba(245, 158, 11, 0.15); color: var(--gold);"><i class="fa-solid fa-plane-circle-check"></i></div>
+                        <div class="preview-info">
+                            <h4>Flight & Hotel Reservation Proof</h4>
+                            <p>Verifiable itineraries tailored for embassy requirements.</p>
+                        </div>
+                    </li>
+                    <li class="preview-item">
+                        <div class="preview-icon" style="background: rgba(59, 130, 246, 0.15); color: var(--blue-accent);"><i class="fa-solid fa-shield-heart"></i></div>
+                        <div class="preview-info">
+                            <h4>Overseas Travel Insurance</h4>
+                            <p>Instant policy issuance meeting all Schengen embassy standards.</p>
+                        </div>
+                    </li>
+                `;
+            }
+        }
+
+        // Destination Filter Logic
+        function filterDestinations(category) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const cards = document.querySelectorAll('.dest-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Calendar Slot Selection
+        let selectedDate = 'Aug 18';
+        let selectedTime = '10:00 AM - 10:30 AM';
+
+        function selectCalDate(element, dateStr) {
+            document.querySelectorAll('.cal-date').forEach(d => d.classList.remove('active'));
+            element.classList.add('active');
+            selectedDate = dateStr;
+        }
+
+        function selectSlot(button) {
+            document.querySelectorAll('.slot-btn').forEach(b => b.classList.remove('selected'));
+            button.classList.add('selected');
+            selectedTime = button.innerText;
+        }
+
+        // Booking Submission & Modal Trigger
+        function openBookingModal(country) {
+            document.getElementById('form-country-input').value = country;
+            document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function handleBookingSubmit(event) {
+            event.preventDefault();
+            const service = document.getElementById('form-service-select').value;
+            const modalDesc = document.getElementById('modal-desc-text');
+            modalDesc.innerHTML = `Your <strong>${service}</strong> consultation for <strong>${selectedDate}</strong> at <strong>${selectedTime}</strong> has been reserved!`;
+            document.getElementById('booking-modal').style.display = 'flex';
+        }
+
+        function closeBookingModal() {
+            document.getElementById('booking-modal').style.display = 'none';
+        }
+
+        // Checklist Item Counter
+        function toggleCheck(element) {
+            element.classList.toggle('checked');
+            const total = document.querySelectorAll('.check-item').length;
+            const checkedCount = document.querySelectorAll('.check-item.checked').length;
+            document.getElementById('checklist-progress').innerText = `${checkedCount} of ${total} Completed`;
+        }
+
+        // FAQ Accordion Toggle
+        function toggleFaq(element) {
+            const item = element.parentElement;
+            item.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
